@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download Simulation</title>
+  <style>
+    /* Page background */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0f0f0f;
+      font-family: "Poppins", sans-serif;
+      color: white;
+    }
+
+    /* Center card */
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    /* Progress container */
+    .progress-container {
+      background: rgba(255, 255, 255, 0.1);
+      width: 300px;
+      height: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 0 auto 15px auto;
+    }
+
+    /* Progress bar fill */
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      border-radius: 10px;
+      transition: width 0.1s linear;
+    }
+
+    /* Percentage text */
+    .percent {
+      font-size: 18px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Downloading...</h2>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="percent" id="percent">0%</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
