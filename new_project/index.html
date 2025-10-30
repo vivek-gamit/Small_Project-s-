@@ -1,0 +1,106 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="icon" href="data:,">
+
+        <style>
+            body{
+                background: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: "Helvetica Neue", sans-serif;
+            }
+
+            .card{
+                position: relative;
+                width: 180px;
+                height: 300px;
+
+                border-radius: 10px;
+                box-shadow: 0 20px 60px rgba(0,0,0, 0.4);
+                margin-top: 10px;
+
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                max-width: 90vw;
+                overflow-x: auto;
+            }
+            .bg-img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .blurred-layer{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: bottom;
+                filter: blur(10px);
+                z-index: 1;
+                mask-image: linear-gradient(to top,rgbs(0,0,0,1),rgba(0,0,0,0));
+                mask-size: 100% 100%;
+                mask-repeat: no-repeat;
+                -webkit-mask-image: linear-gradient(
+                    to top,
+                    rgba(0,0,0,1),
+                    rgba(0,0,0,0)
+                );
+                -webkit-mask-size: 100% 100%;
+                -webkit-mask-repeat: no-repeat;
+            }
+
+            .content{
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                color: white;
+                z-index: 2;
+            } 
+
+            .content h3{
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 6px;
+            }
+
+            .content p{
+                font-size: 14px;
+                color: #ddd;
+                line-height: 1.4;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="flex flex-col gap-10 items-center">
+        <input class="px-5 py-5 rounded outline-none bg-[#111] text-[#888]" type="text" placeholder="Search">
+
+        <div class="cards"> <!-- This is the container -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1hbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600" alt="" class="bg-img">
+                <div class="blurred-layer"></div>
+                <div class="content">
+                    <h3>user 123</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur...</p>
+                </div>
+            </div>
+            <!-- Repeat more cards here -->
+        </div>
+        </div>
+
+
+        <script src="script.js"></script>
+    </body>
+    </html>
